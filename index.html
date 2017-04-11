@@ -3,11 +3,26 @@
 
 <head>
   <title>dinosaur JQUERY</title>
+  <link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
-<script type="text/javascript" src= "./lib/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="javascripts/main.js"></script>
+
+	<div class="navbar-form navbar-left" role="search">
+	  <div class="form-group">
+	    <input type="text" class="form-control" placeholder="Search" id="textbox">
+	  </div>
+	</div>
+
+
+
+	<div class="container" id="dinosaurs"></div>
+
+<!-- jquery then bootstrap then local file -->
+
+<script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="./javascripts/main.js"></script>
 </body>
 
 </html>
