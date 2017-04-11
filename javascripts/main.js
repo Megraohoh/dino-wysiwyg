@@ -8,6 +8,8 @@ $.ajax('./db/dinosaurs.json').done(function(data){
 function makeDom(myArrayToPrint) {
 	var myDomString = "";
 	for (var i =0; i < myArrayToPrint.length; i++) {
+		myDomString += `<div class="row">`;
+		myDomString += `<div class="col-xs-6 col-md-4">`;
 		myDomString += `<div class="dinoCard">`;
 		myDomString += `<header><h1>${myArrayToPrint[i].type}</h1></header>`;
 		myDomString += `<section>`;
@@ -15,7 +17,30 @@ function makeDom(myArrayToPrint) {
 		myDomString += `<p class="bio">${myArrayToPrint[i].bio}</p>`;
 		myDomString += `</section>`;
 		myDomString += `<footer>${myArrayToPrint[i].info}</footer>`;
-		myDomString += `</div>`;
+		myDomString += `</div></div></div>`;
+
+		if(i%3 === 0) {
+			myDomString += `<div class="clearfix visible-xs-block"></div>`;
+		}
 	}
 	$("#dinosaurs").append(myDomString);
+}
+
+$("#dinosaurs").on("click", ".dinoCard", function(e){
+	$(".dinoCard").removeClass("dottedBorder");
+	$(this).addClass("dottedBorder");
+	$("#textbox").val("").focus();
+});
+
+$("#textbox").keyup(mirrorText);
+
+function mirrorText(e) {
+	var selectedCard = $(".dottedBorder");
+	var bioTyped = $("#textbox").val();
+	var bio = $(".dottedBorder").find("p.bio");
+	bio.html(bioTyped);     // bio = bioTyped;   
+
+	if (e.keyCode == 13) {
+		$("#textbox").val("");
+	}
 }

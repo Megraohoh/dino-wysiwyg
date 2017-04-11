@@ -1,0 +1,30 @@
+body {
+	background-color: grey;
+}
+
+.dottedBorder {
+	border: 2px dotted black;
+}
+
+/*****ALTERNATE BACKGROUND COLORS ON CARDS*****/
+
+.dinoCard {
+	max-width: 30%;
+}
+
+.dinoCard img {
+	max-width: 100px;
+}
+
+/*#dinosaurs .dinoCard {
+	background-color: lightblue;
+}
+
+#dinosaurs .row:nth-of-type(2n) .dinoCard:nth-of-type(2n) {
+	background-color: goldenrod;
+}
+
+
+#dinosaurs .row:nth-of-type(2n + 1) .dinoCard:nth-of-type(2n) {
+	background-color: goldenrod;
+}*/
