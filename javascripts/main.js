@@ -1,7 +1,5 @@
-var dinoArray = [];
-
 $.ajax('./db/dinosaurs.json').done(function(data){
-	dinoArray = data.dinosaurs;
+	var dinoArray = data.dinosaurs;
 	makeDom(dinoArray);
 }).fail(function(error){
 	console.log("You've made a huge mistake", error);
