@@ -8,7 +8,9 @@ $.ajax('./db/dinosaurs.json').done(function(data){
 function makeDom(myArrayToPrint) {
 	var myDomString = "";
 	for (var i =0; i < myArrayToPrint.length; i++) {
-		myDomString += `<div class="row">`;
+		if (counter % 3 === 0){
+			myDomString += `<div class="row">`;
+		}
 		myDomString += `<div class="col-xs-6 col-md-4">`;
 		myDomString += `<div class="dinoCard">`;
 		myDomString += `<header><h1>${myArrayToPrint[i].type}</h1></header>`;
@@ -19,8 +21,9 @@ function makeDom(myArrayToPrint) {
 		myDomString += `<footer>${myArrayToPrint[i].info}</footer>`;
 		myDomString += `</div></div></div>`;
 
-		if(i%3 === 0) {
-			myDomString += `<div class="clearfix visible-xs-block"></div>`;
+		counter++;
+		if (counter % 3 === 0) {
+			myDomString += `</div>`;
 		}
 	}
 	$("#dinosaurs").append(myDomString);
